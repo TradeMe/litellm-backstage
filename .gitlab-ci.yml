@@ -22,6 +22,7 @@ publish-plugin:
     - echo "Configuring NPM authentication for GitLab registry"
     - echo "@trademe/plugin-litellm:registry=https://gitlab.com/api/v4/projects/${CI_PROJECT_ID}/packages/npm/" >> .npmrc
     - echo "//gitlab.com/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken=${CI_JOB_TOKEN}" >> .npmrc
+    - echo "always-auth=true" >> .npmrc
     - cat .npmrc
     - npm publish
   cache:
