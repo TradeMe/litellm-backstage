@@ -1,5 +1,5 @@
 {
-  "name": "@litellm/plugin-litellm",
+  "name": "@trademe/plugin-litellm",
   "description": "Integrates LiteLLM with Backstage using Microsoft authentication, automatically creating users from Azure AD identities and enabling API key generation with team/budget verification in a centralized interface.",
   "version": "0.2.1",
   "license": "MIT",
@@ -9,13 +9,14 @@
   "publishConfig": {
     "access": "public",
     "main": "dist/index.esm.js",
-    "types": "dist/index.d.ts"
+    "types": "dist/index.d.ts",
+    "registry": "https://gitlab.com/api/v4/projects/${CI_PROJECT_ID}/packages/npm/"
   },
   "backstage": {
     "role": "frontend-plugin",
     "pluginId": "litellm",
     "pluginPackages": [
-      "@internal/plugin-litellm"
+      "@trademe/plugin-litellm"
     ]
   },
   "sideEffects": false,
