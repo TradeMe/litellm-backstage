@@ -20,8 +20,9 @@ publish-plugin:
     - yarn workspace @trademe/plugin-litellm build
     - cd $PLUGIN_DIR
     - echo "Configuring NPM authentication for GitLab registry"
-    - echo "@trademe:registry=https://gitlab.com/api/v4/projects/79450200/packages/npm/" > .npmrc
-    - echo "//gitlab.com/api/v4/projects/79450200/packages/npm/:_authToken=${CI_JOB_TOKEN}" >> .npmrc
+    - echo "@trademe/plugin-litellm:registry=https://gitlab.com/api/v4/projects/${CI_PROJECT_ID}/packages/npm/" >> .npmrc
+    - echo "//gitlab.com/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken=${CI_JOB_TOKEN}" >> .npmrc
+    - cat .npmrc
     - npm publish
   cache:
     key: ${CI_COMMIT_REF_SLUG}
