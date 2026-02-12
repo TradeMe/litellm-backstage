@@ -4,14 +4,9 @@ import {
   Button,
   TextField,
   Typography,
-  Select,
-  MenuItem,
   Tabs,
   Tab,
   Box,
-  FormControl,
-  FormHelperText,
-  InputLabel,
   CircularProgress,
 } from '@material-ui/core';
 import {
@@ -184,7 +179,7 @@ export const LitellmPage = () => {
         );
       }
 
-      const data = await response.json();
+      await response.json();
       return true;
     } catch (error) {
       console.error('Error creating user:', error);
